@@ -148,21 +148,19 @@ export default function MiniDrawer() {
 
           {routeAdmin.map((item, index) => (item.path && item.icon)
             ? <MenuSidebar item={item} key={item.name + index} />
-            : item.group && <TitleGroup group={item.group} />
+            : item.group && <TitleGroup group={item.group} key={item.group + index + 'group'} />
           )}
           {routeEmployee.map((item, index) => (item.path && item.icon)
             ? <MenuSidebar item={item} key={item.name + index} />
-            : item.group && <TitleGroup group={item.group} />
+            : item.group && <TitleGroup group={item.group} key={item.group + index + 'group'} />
           )}
           {routeKitchen.map((item, index) => (item.path && item.icon)
             ? <MenuSidebar item={item} key={item.name + index} />
-            : item.group && <TitleGroup group={item.group} />
+            : item.group && <TitleGroup group={item.group} key={item.group + index + 'group'} />
           )}
-          <Divider />
-
-        </Drawer>
+        </Drawer >
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-
+          <Box sx={{ height: "3.5rem" }} />
           <Outlet />
         </Box>
       </Box>

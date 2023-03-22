@@ -24,7 +24,6 @@ import {
 } from "@mui/icons-material";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { useUpdateMyProfileMutation } from "../../../store/services/userApi";
 import { RootState } from "../../../store";
 import { storeLogout } from "../../../store/features/auth";
 
@@ -71,7 +70,6 @@ export type IUser = {
 }
 export default function ProfilePopup() {
   const { auth } = useSelector((state: RootState) => ({ ...state }));
-  const [updateUser] = useUpdateMyProfileMutation();
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -139,11 +137,11 @@ export default function ProfilePopup() {
           position: "bottom-center",
         });
       } else {
-        await updateUser(user);
+        // await updateUser(user);
         handleClose();
       }
     } else {
-      await updateUser(user);
+      // await updateUser(user);
       handleClose();
     }
   };

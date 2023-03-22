@@ -20,6 +20,7 @@ export const userApi = createApi({
                 method: "POST",
                 body,
             }),
+            invalidatesTags: ['userApi']
         }),
 
         me: builder.mutation({
@@ -27,6 +28,7 @@ export const userApi = createApi({
                 url: `/auth/me`,
                 method: "POST",
             }),
+            invalidatesTags: ['userApi']
         }),
 
 
@@ -37,79 +39,11 @@ export const userApi = createApi({
             providesTags: ["userApi"],
         }),
 
-        updateMyProfile: builder.mutation({
-            query: ({ ...body }) => ({
-                url: "/users/update/profile",
-                method: "POST",
-                body
-            }),
-            invalidatesTags: ["userApi"],
-        }),
-
-        addUser: builder.mutation({
-            query: ({ ...body }) => ({
-                url: "users/create",
-                method: "POST",
-                body,
-            }),
-            invalidatesTags: ["userApi"],
-        }),
-
-        updatePassword: builder.mutation({
-            query: ({ ...body }) => ({
-                url: "/users/update-password",
-                method: "POST",
-                body,
-            }),
-            invalidatesTags: ["userApi"],
-        }),
-
-        deleteUser: builder.mutation({
-            query: (id) => ({
-                url: `/users/${id}/delete`,
-                method: "DELETE",
-            }),
-            invalidatesTags: ["userApi"],
-        }),
-
-        updateStatus: builder.mutation({
-            query: ({ ...body }) => ({
-                url: `/users/${body.u_id}/update/status`,
-                method: "PATCH",
-                body
-            }),
-            invalidatesTags: ["userApi"],
-        }),
-
-        updateUser: builder.mutation({
-            query: ({ ...body }) => ({
-                url: `/users/update`,
-                method: "POST",
-                body
-            }),
-            invalidatesTags: ["userApi"],
-        }),
-
-        verifyEmail: builder.mutation({
-            query: ({ ...body }) => ({
-                url: `/auth/email-send-pin`,
-                method: "POST",
-                body
-            }),
-            invalidatesTags: ["userApi"],
-        }),
-
     }),
 });
 
-export const { useGetUsersQuery,
-    useUpdateUserMutation,
-    useUpdateStatusMutation,
-    useDeleteUserMutation,
-    useUpdateMyProfileMutation,
+export const {
+    useGetUsersQuery,
     useMeMutation,
-    useAddUserMutation,
     useLoginMutation,
-    useVerifyEmailMutation,
-    useUpdatePasswordMutation,
 } = userApi;
