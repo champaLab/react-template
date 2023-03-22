@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'noto';
+    src: url('./../fonts/NotoSerifLao-Regular.woff');
+}
+a{
+    text-decoration: none;
+    color: inherit;
+
+}
+*{
+font-family: 'noto'!important;
+}
