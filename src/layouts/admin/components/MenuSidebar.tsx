@@ -55,7 +55,7 @@ const MenuSidebar = ({ item }: Props) => {
                             justifyContent: 'center',
                         }}
                     >
-                        {<item.icon sx={pathname === item.path ? { color: customTheme.palette.primary.main } : {}} />}
+                        {<item.icon sx={pathname === item.path ? { color: customTheme.palette.primary.main } : { color: "#A0A0A0" }} />}
                     </ListItemIcon>
                     <ListItemText primary={item.name} sx={{ opacity: drawer.open ? 1 : 0 }} />
                 </ListItemButton>
