@@ -9,16 +9,5 @@ export const routeAdmin = [
         component: lazy(() => import("../pages/app/home")),
         icon: Assessment
     },
-    {
-        name: 'ລາຍງານ',
-        path: '/app/report',
-        component: lazy(() => import("../pages/app/home")),
-        icon: Assessment
-    },
-    {
-        name: 'ລາຍງານ',
-        path: '/app/report',
-        component: lazy(() => import("../pages/app/home")),
-        icon: Assessment
-    },
+
 ]
